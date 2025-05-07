@@ -21,6 +21,7 @@ public class Product {
     }
 
 
+
     // Готовим equals для сравнения товаров по имени (можешь расширять)
     @Override
     public boolean equals(Object obj) {
