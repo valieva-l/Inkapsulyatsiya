@@ -53,7 +53,7 @@ public class App {
 
         // Поиск товара, который есть в корзине
 
-        // что то неправильно, проверить
+
 
         System.out.println("Есть сыр? " + basket.containsProduct(new Product("Сыр", 239))); // true
         System.out.println("Есть груша? " + basket.containsProduct(new Product("Груша", 300))); // false
