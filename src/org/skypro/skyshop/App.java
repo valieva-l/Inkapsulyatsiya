@@ -54,14 +54,11 @@ public class App {
 
         // Поиск товара, который есть в корзине
 
-
-
         System.out.println("Есть сыр? " + basket.containsProduct(new Product("Сыр", 239))); // true
         System.out.println("Есть груша? " + basket.containsProduct(new Product("Груша", 300))); // false
 
         // Очистка корзины
         basket.clear();
-
 
         // Проверка после очистки
         basket.printContents(); // Пустая
@@ -69,7 +66,7 @@ public class App {
         System.out.println("Есть банан? " + basket.containsProduct(new Product("Банан>", 100))); // false
     }
 
-    }
+}
 
 
 

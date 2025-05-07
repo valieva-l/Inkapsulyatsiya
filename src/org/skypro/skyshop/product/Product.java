@@ -20,9 +20,6 @@ public class Product {
         return productСost;
     }
 
-
-
-    // Готовим equals для сравнения товаров по имени (можешь расширять)
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
