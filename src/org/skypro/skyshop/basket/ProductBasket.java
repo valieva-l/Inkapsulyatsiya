@@ -28,7 +28,7 @@ public class ProductBasket {
         return total;
     }
 
-    // Метод печати содержимого
+// Метод печати содержимого
     public void printContents() {
         boolean empty = true;
         for (Product p : products) {
