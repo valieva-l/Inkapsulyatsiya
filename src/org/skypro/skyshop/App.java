@@ -1,7 +1,8 @@
 package org.skypro.skyshop;
 
 import org.skypro.skyshop.basket.ProductBasket;
-import org.skypro.skyshop.product.*;
+
+import org.skypro.skyshop.product.Product;
 
 public class App {
 
@@ -9,47 +10,34 @@ public class App {
 
         ProductBasket basket = new ProductBasket();
 
-
-
-
         // Добавление продукта в корзину
-        //<имя продукта>: <стоимость>
-        Product tomato = new SimpleProduct("Помидор", 259);
+        Product tomato = new Product("Помидор", 259);
         System.out.println("tomato = " + tomato.getProductName());
         System.out.println("tomatoСost = " + tomato.getProductСost());
-        System.out.println("Специальный товар? " + tomato.getIsSpecial());
 
-        // <имя продукта со скидкой>: <стоимость> (<скидка>%)
-        Product cucumbers = new DiscountedProduct("Огурцы", 150, 20);
+        Product cucumbers = new Product("Огурцы", 150);
         System.out.println("cucumbers = " + cucumbers.getProductName());
-        System.out.println(cucumbers);
-        System.out.println("Специальный товар? " + cucumbers.getIsSpecial());
+        System.out.println("cucumbersСost = " + cucumbers.getProductСost());
 
+        Product pasta = new Product("Макароны", 200);
+        System.out.println("pasta = " + pasta.getProductName());
+        System.out.println("pastaСost = " + pasta.getProductСost());
 
-        //<имя продукта c фиксированной ценой>: Фиксированная цена <значение константы фиксированной цены>
-        Product pasta = new FixPriceProduct("Макароны");
-        System.out.println(pasta);
-        System.out.println("Специальный товар? " + pasta.getIsSpecial());
-
-        Product cheese = new SimpleProduct("Сыр", 239);
+        Product cheese = new Product("Сыр", 239);
         System.out.println("cheese = " + cheese.getProductName());
         System.out.println("cheeseСost = " + cheese.getProductСost());
-        System.out.println("Специальный товар? " + cheese.getIsSpecial());
 
-        Product milk = new SimpleProduct("Молоко", 96);
+        Product milk = new Product("Молоко", 96);
         System.out.println("milk = " + milk.getProductName());
         System.out.println("milkСost = " + milk.getProductСost());
-        System.out.println("Специальный товар? " + milk.getIsSpecial());
 
-        Product bread = new SimpleProduct("Хлеб", 54);
+        Product bread = new Product("Хлеб", 54);
         System.out.println("bread = " + bread.getProductName());
         System.out.println("breadСost = " + bread.getProductСost());
-        System.out.println("Специальный товар? " + bread.getIsSpecial());
 
-        Product oil = new SimpleProduct("Масло", 120);
+        Product oil = new Product("Масло", 120);
         System.out.println("oil = " + oil.getProductName());
         System.out.println("oilСost = " + oil.getProductСost());
-        System.out.println("Специальный товар? " + oil.getIsSpecial());
 
         //Добавление продукта в заполненную корзину, в которой нет свободного места.
         basket.addProduct(tomato);
@@ -66,8 +54,8 @@ public class App {
 
         // Поиск товара, который есть в корзине
 
-        System.out.println("Есть сыр? " + basket.containsProduct(new SimpleProduct("Сыр", 239))); // true
-        System.out.println("Есть груша? " + basket.containsProduct(new SimpleProduct("Груша", 300))); // false
+        System.out.println("Есть сыр? " + basket.containsProduct(new Product("Сыр", 239))); // true
+        System.out.println("Есть груша? " + basket.containsProduct(new Product("Груша", 300))); // false
 
         // Очистка корзины
         basket.clear();
@@ -75,16 +63,11 @@ public class App {
         // Проверка после очистки
         basket.printContents(); // Пустая
         System.out.println("Общая цена: " + basket.getTotalCost()); // 0
-        System.out.println("Есть банан? " + basket.containsProduct(new SimpleProduct("Банан>", 100))); // false
-
+        System.out.println("Есть банан? " + basket.containsProduct(new Product("Банан>", 100))); // false
     }
+
+
 }
-
-
-
-
-
-
 
 
 
