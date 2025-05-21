@@ -20,7 +20,7 @@ public class SearchEngine {
         }
     }
 
-    // Метод для поиска по терминам
+
     public Searchable[] search(String term) {
         Searchable[] results = new Searchable[5];
         int count = 0;
