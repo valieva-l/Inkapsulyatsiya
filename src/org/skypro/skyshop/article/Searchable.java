@@ -9,7 +9,7 @@ public interface Searchable {
     void print();
 
     default String getStringRepresentation() {
-        return "имя" +  getSearchableName() + " — тип " + getContentType(); // Метод преобразования Searchable-объекта в строку
+        return "имя" +  getSearchableName() + " — тип " + getContentType();
 
     }
 }
