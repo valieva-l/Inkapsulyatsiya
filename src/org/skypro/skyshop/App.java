@@ -16,7 +16,7 @@ public class App {
         SearchEngine searchEngine = new SearchEngine(10);
 
 
-        // Добавляем товары
+
         searchEngine.add(new Product("Помидор", 259));
         searchEngine.add(new Product("Огурцы", 150));
         searchEngine.add(new Product("Макароны", 200));
@@ -24,8 +24,7 @@ public class App {
         searchEngine.add(new Product("Молоко", 96));
         searchEngine.add(new Product("Хлеб", 54));
 
-        // Создаем и добавляем статьи
-        // Создаем и добавляем статьи
+
         Article article1 = new Article("Здоровое питание", "Польза употреблении овощей");
         Article article2 = new Article("Рецепты с молочной продукцией", "Вкусные рецепты с использованием молочной продукции");
         Article article3 = new Article("Что калорийнее — хлеб или макароны?", "Практические советы и рецепты для более здорового выбора углеводов");
@@ -35,7 +34,7 @@ public class App {
         searchEngine.add(article2);
         searchEngine.add(article3);
 
-        // Тестируем поиск
+
         System.out.println("\nПоиск по слову 'Что калорийнее — хлеб или макароны?':");
         Searchable[] results1 = searchEngine.search("Макароны");
         printResults(results1);
