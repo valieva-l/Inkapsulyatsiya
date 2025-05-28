@@ -1,72 +1,65 @@
 package org.skypro.skyshop;
 
+import org.skypro.skyshop.article.Article;
+import org.skypro.skyshop.article.SearchEngine;
+import org.skypro.skyshop.article.Searchable;
 import org.skypro.skyshop.basket.ProductBasket;
 
 import org.skypro.skyshop.product.Product;
 
 public class App {
 
+    private static SearchEngine searchEngine;
+
     public static void main(String[] args) {
 
-        ProductBasket basket = new ProductBasket();
+        SearchEngine searchEngine = new SearchEngine(10);
 
-        // Добавление продукта в корзину
-        Product tomato = new Product("Помидор", 259);
-        System.out.println("tomato = " + tomato.getProductName());
-        System.out.println("tomatoСost = " + tomato.getProductСost());
 
-        Product cucumbers = new Product("Огурцы", 150);
-        System.out.println("cucumbers = " + cucumbers.getProductName());
-        System.out.println("cucumbersСost = " + cucumbers.getProductСost());
 
-        Product pasta = new Product("Макароны", 200);
-        System.out.println("pasta = " + pasta.getProductName());
-        System.out.println("pastaСost = " + pasta.getProductСost());
+        searchEngine.add(new Product("Помидор", 259));
+        searchEngine.add(new Product("Огурцы", 150));
+        searchEngine.add(new Product("Макароны", 200));
+        searchEngine.add(new Product("Сыр", 239));
+        searchEngine.add(new Product("Молоко", 96));
+        searchEngine.add(new Product("Хлеб", 54));
 
-        Product cheese = new Product("Сыр", 239);
-        System.out.println("cheese = " + cheese.getProductName());
-        System.out.println("cheeseСost = " + cheese.getProductСost());
 
-        Product milk = new Product("Молоко", 96);
-        System.out.println("milk = " + milk.getProductName());
-        System.out.println("milkСost = " + milk.getProductСost());
+        Article article1 = new Article("Здоровое питание", "Польза употреблении овощей");
+        Article article2 = new Article("Рецепты с молочной продукцией", "Вкусные рецепты с использованием молочной продукции");
+        Article article3 = new Article("Что калорийнее — хлеб или макароны?", "Практические советы и рецепты для более здорового выбора углеводов");
 
-        Product bread = new Product("Хлеб", 54);
-        System.out.println("bread = " + bread.getProductName());
-        System.out.println("breadСost = " + bread.getProductСost());
 
-        Product oil = new Product("Масло", 120);
-        System.out.println("oil = " + oil.getProductName());
-        System.out.println("oilСost = " + oil.getProductСost());
+        searchEngine.add(article1);
+        searchEngine.add(article2);
+        searchEngine.add(article3);
 
-        //Добавление продукта в заполненную корзину, в которой нет свободного места.
-        basket.addProduct(tomato);
-        basket.addProduct(cucumbers);
-        basket.addProduct(pasta);
-        basket.addProduct(cheese);
-        basket.addProduct(milk);
-        basket.addProduct(bread);
-        basket.addProduct(oil);
 
-        //Печать содержимого корзины с несколькими товарами
-        //Получение стоимости корзины с несколькими товарами
-        basket.printContents();
+        System.out.println("\nПоиск по слову 'Что калорийнее — хлеб или макароны?':");
+        Searchable[] results1 = searchEngine.search("Макароны");
+        printResults(results1);
 
-        // Поиск товара, который есть в корзине
+        System.out.println("\nПоиск по слову 'Здоровое питание':");
+        Searchable[] results2 = searchEngine.search("Помидор");
+        printResults(results2);
 
-        System.out.println("Есть сыр? " + basket.containsProduct(new Product("Сыр", 239))); // true
-        System.out.println("Есть груша? " + basket.containsProduct(new Product("Груша", 300))); // false
-
-        // Очистка корзины
-        basket.clear();
-
-        // Проверка после очистки
-        basket.printContents(); // Пустая
-        System.out.println("Общая цена: " + basket.getTotalCost()); // 0
-        System.out.println("Есть банан? " + basket.containsProduct(new Product("Банан>", 100))); // false
+        System.out.println("\nПоиск по слову 'Яблоко':");
+        Searchable[] results3 = searchEngine.search("Яблоко");
+        printResults(results3);
     }
 
+    private static void printResults(Searchable[] results) {
+        if (results.length == 0) {
+            System.out.println("Ничего не найдено.");
+        } else {
+            for (Searchable item : results) {
+                if (item != null) {
+                    System.out.println(item.getSearchTerm());
+                }
 
+            }
+        }
+    }
 }
 
 
