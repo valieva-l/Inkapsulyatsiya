@@ -6,7 +6,6 @@ public interface Searchable {
     String getContentType();
     String getSearchableName();
 
-    void print();
 
     default String getStringRepresentation() {
         return "имя" +  getSearchableName() + " — тип " + getContentType();

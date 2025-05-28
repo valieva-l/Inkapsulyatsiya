@@ -30,10 +30,6 @@ public class Article implements Searchable {
                 '}';
     }
 
-    @Override
-    public void print() {
-
-    }
 
 
 }
