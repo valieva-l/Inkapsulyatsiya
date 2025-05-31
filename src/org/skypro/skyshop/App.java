@@ -1,22 +1,25 @@
 package org.skypro.skyshop;
 
 import org.skypro.skyshop.article.Article;
+import org.skypro.skyshop.article.BestResultNotFound;
 import org.skypro.skyshop.article.SearchEngine;
 import org.skypro.skyshop.article.Searchable;
-import org.skypro.skyshop.basket.ProductBasket;
 
+import org.skypro.skyshop.product.DiscountedProduct;
 import org.skypro.skyshop.product.Product;
+import org.skypro.skyshop.product.SimpleProduct;
+
 
 public class App {
 
-    private static SearchEngine searchEngine;
+
 
     public static void main(String[] args) {
+
 
         SearchEngine searchEngine = new SearchEngine(10);
 
 
-        // Добавляем товары
         searchEngine.add(new Product("Помидор", 259));
         searchEngine.add(new Product("Огурцы", 150));
         searchEngine.add(new Product("Макароны", 200));
@@ -24,8 +27,6 @@ public class App {
         searchEngine.add(new Product("Молоко", 96));
         searchEngine.add(new Product("Хлеб", 54));
 
-        // Создаем и добавляем статьи
-        // Создаем и добавляем статьи
         Article article1 = new Article("Здоровое питание", "Польза употреблении овощей");
         Article article2 = new Article("Рецепты с молочной продукцией", "Вкусные рецепты с использованием молочной продукции");
         Article article3 = new Article("Что калорийнее — хлеб или макароны?", "Практические советы и рецепты для более здорового выбора углеводов");
@@ -35,9 +36,33 @@ public class App {
         searchEngine.add(article2);
         searchEngine.add(article3);
 
-        // Тестируем поиск
+        try {
+            SimpleProduct product1 = new SimpleProduct("", 10);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            SimpleProduct product2 = new SimpleProduct("Макароны", -10);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            DiscountedProduct product3 = new DiscountedProduct("Помидор", 20, 150);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            Searchable bestMatch = searchEngine.findBestMatch("Огурцы");
+            System.out.println("Лучший результат: " + bestMatch.getSearchTerm());
+        } catch (BestResultNotFound e) {
+            System.out.println(e.getMessage());
+        }
+
         System.out.println("\nПоиск по слову 'Что калорийнее — хлеб или макароны?':");
-        Searchable[] results1 = searchEngine.search("Макароны");
+        Searchable[] results1 = searchEngine.search("Хлеб");
         printResults(results1);
 
         System.out.println("\nПоиск по слову 'Здоровое питание':");

@@ -10,16 +10,24 @@ public class Product {
         this.productСost = productСost;
     }
 
+    public Product(String productName) {
+        if (productName == null || productName.isBlank()) {
+            throw new IllegalArgumentException("Название продукта не может быть пустым или состоять только из пробелов.");
+        }
+    }
+
     public String getProductName() {
 
         return productName;
     }
 
-
-
     public int getProductСost() {
 
         return productСost;
+    }
+
+    public String getSearchTerm() {
+        return productName;
     }
 
     @Override

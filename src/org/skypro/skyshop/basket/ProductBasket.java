@@ -44,7 +44,6 @@ public class ProductBasket {
         }
     }
 
-    //метод поиска товара
     public boolean containsProduct(Product product) {
         for (Product p : products) {
             if (p != null && p.equals(product)) {
@@ -54,7 +53,6 @@ public class ProductBasket {
         return false;
     }
 
-    // Очистка корзины
     public void clear() {
         for (int i = 0; i < products.length; i++) {
             products[i] = null;
