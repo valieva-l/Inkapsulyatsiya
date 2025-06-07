@@ -26,7 +26,9 @@ public class Product {
         return productСost;
     }
 
+
     public String getSearchTerm() {
+
         return productName;
     }
 
@@ -36,5 +38,13 @@ public class Product {
         if (!(obj instanceof Product)) return false;
         Product other = (Product) obj;
         return this.productName.equals(other.productName);
+    }
+
+    public String getName() {
+        return productName;
+    }
+
+    public String toString() {
+        return "Product{name='" + productName + "'}";
     }
 }
