@@ -19,6 +19,8 @@ public class Product {
     public String getProductName() {
 
         return productName;
+
+
     }
 
     public int getProductСost() {
@@ -46,5 +48,13 @@ public class Product {
 
     public String toString() {
         return "Product{name='" + productName + "'}";
+    }
+
+    public String getContentType () {
+        return "PRODUCT";
+    }
+
+    public String getSearchableName() {
+        return productName;
     }
 }
