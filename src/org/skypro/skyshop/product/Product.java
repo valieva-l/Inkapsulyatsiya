@@ -24,7 +24,6 @@ public class Product {
     }
 
     public int getProductСost() {
-
         return productСost;
     }
 
