@@ -5,9 +5,8 @@ public class FixPriceProduct extends Product {
     public static final int FIX_PRODUCT = 200;
 
     public FixPriceProduct(String productName) {
-        super(productName);
+        super(productName, FIX_PRODUCT);
     }
-
 
     public int getProductСost() {
         return FIX_PRODUCT;

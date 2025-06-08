@@ -11,9 +11,7 @@ public class Product implements Searchable {
         this.productName = productName;
         this.productСost = productСost;
 
-
     }
-
 
     public String getProductName() {
 

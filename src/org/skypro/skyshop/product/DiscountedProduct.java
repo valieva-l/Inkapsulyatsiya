@@ -6,11 +6,9 @@ public class DiscountedProduct extends Product {
     private int discountPercentage;
 
     public DiscountedProduct(String productName, int basePrice, int discountPercentage) {
-        super(productName);
-        this.basePrice = basePrice;
+        super(productName, basePrice);
         this.discountPercentage = discountPercentage;
     }
-
     @Override
     public int getProductСost() {
         int discountAmount = (basePrice * discountPercentage) / 100; // Считаем сумму скидки
