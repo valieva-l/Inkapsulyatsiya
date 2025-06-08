@@ -48,6 +48,7 @@ public class App {
         basket.addProduct(bread);
         basket.addProduct(oil);
 
+
         //Печать содержимого корзины с несколькими товарами
         //Получение стоимости корзины с несколькими товарами
         basket.printContents();
