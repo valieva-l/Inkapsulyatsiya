@@ -45,11 +45,12 @@ public class Product implements Searchable {
 
     @Override
     public String getContentType() {
-        return "";
+        return "PRODUCT";
     }
 
     @Override
     public String getSearchableName() {
-        return "";
+        return productName;
+    }
     }
 }
