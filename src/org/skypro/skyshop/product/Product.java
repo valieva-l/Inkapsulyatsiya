@@ -19,9 +19,7 @@ public class Product implements Searchable {
 
         return productName;
 
-
     }
-
 
     public int getProductСost() {
         return productСost;
