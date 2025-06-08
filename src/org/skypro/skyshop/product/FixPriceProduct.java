@@ -12,11 +12,9 @@ public class FixPriceProduct extends Product {
     public int getProductСost() {
         return FIX_PRODUCT;
     }
-
     public boolean getIsSpecial() {
         return true;
     }
-
 
     @Override
     public String toString() {

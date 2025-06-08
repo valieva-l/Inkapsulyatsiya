@@ -12,13 +12,9 @@ import org.skypro.skyshop.product.SimpleProduct;
 
 public class App {
 
-
-
     public static void main(String[] args) {
 
-
         SearchEngine searchEngine = new SearchEngine(10);
-
 
         searchEngine.add(new Product("Помидор", 259));
         searchEngine.add(new Product("Огурцы", 150));
@@ -30,7 +26,6 @@ public class App {
         Article article1 = new Article("Здоровое питание", "Польза употреблении овощей");
         Article article2 = new Article("Рецепты с молочной продукцией", "Вкусные рецепты с использованием молочной продукции");
         Article article3 = new Article("Что калорийнее — хлеб или макароны?", "Практические советы и рецепты для более здорового выбора углеводов");
-
 
         searchEngine.add(article1);
         searchEngine.add(article2);

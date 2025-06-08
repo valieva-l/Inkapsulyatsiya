@@ -4,7 +4,6 @@ public class Product {
     private String productName;
     private int productСost;
 
-
     public Product(String productName, int productСost) {
         this.productName = productName;
         this.productСost = productСost;

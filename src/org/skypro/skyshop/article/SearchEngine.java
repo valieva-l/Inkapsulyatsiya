@@ -14,7 +14,6 @@ public class SearchEngine extends Article {
         currentIndex = 0;
     }
 
-
     public void add(Searchable item) {
         if (currentIndex < searchableItems.length) {
             searchableItems[currentIndex] = item;
@@ -66,7 +65,6 @@ public class SearchEngine extends Article {
 
         return bestMatch;
     }
-
 
     private int countOccurrences(String str, String search) {
         int count = 0;
