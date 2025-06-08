@@ -13,6 +13,7 @@ public class ProductBasket {
             }
         }
 
+
         System.out.println("Невозможно добавить продукт");
     }
 
@@ -43,6 +44,7 @@ public class ProductBasket {
         }
     }
 
+
     public boolean containsProduct(Product product) {
         for (Product p : products) {
             if (p != null && p.equals(product)) {
@@ -52,13 +54,13 @@ public class ProductBasket {
         return false;
     }
 
+
     public void clear() {
         for (int i = 0; i < products.length; i++) {
             products[i] = null;
         }
+
         System.out.println("Корзина очищена");
     }
 
 }
-
-
