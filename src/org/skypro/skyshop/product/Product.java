@@ -1,7 +1,9 @@
 package org.skypro.skyshop.product;
 
-public class Product {
-    private String productName;
+import org.skypro.skyshop.article.Searchable;
+
+public class Product implements Searchable {
+    public String productName;
     private int productСost;
 
 
@@ -10,11 +12,13 @@ public class Product {
         this.productСost = productСost;
     }
 
+    public Product(String productName) {
+    }
+
     public String getProductName() {
 
         return productName;
     }
-
 
 
     public int getProductСost() {
@@ -28,5 +32,20 @@ public class Product {
         if (!(obj instanceof Product)) return false;
         Product other = (Product) obj;
         return this.productName.equals(other.productName);
+    }
+
+    @Override
+    public String getSearchTerm() {
+        return "";
+    }
+
+    @Override
+    public String getContentType() {
+        return "";
+    }
+
+    @Override
+    public String getSearchableName() {
+        return "";
     }
 }

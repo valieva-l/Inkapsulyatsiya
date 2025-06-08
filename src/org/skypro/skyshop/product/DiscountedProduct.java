@@ -18,12 +18,12 @@ public class DiscountedProduct extends Product {
     }
 
 
-    @Override
+
     public boolean getIsSpecial() {
         return true;
     }
 
-    // Переопределение toString
+
     @Override
     public String toString() {
         return "Товар со скидкой: Базовая цена: " + basePrice + ", Скидка: " + discountPercentage + "%, Итоговая цена: " + getProductСost();

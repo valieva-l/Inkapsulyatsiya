@@ -8,18 +8,18 @@ public class FixPriceProduct extends Product {
         super(productName);
     }
 
-    @Override
+
     public int getProductСost() {
         return FIX_PRODUCT;
     }
 
-    @Override
+
     public boolean getIsSpecial() {
         return true;
     }
 
 
-    @Override
+
     public String toString() {
 
         return getProductName() + " Фиксированная цена " + FIX_PRODUCT;
