@@ -13,6 +13,7 @@ public class ProductBasket {
         products = new ArrayList<>(); // Используем ArrayList
     }
 
+
     public void addProduct(Product product) {
         products.add(product);
     }
