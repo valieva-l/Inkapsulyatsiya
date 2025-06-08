@@ -19,7 +19,6 @@ public class DiscountedProduct extends Product {
         return basePrice - discountAmount; // Возвращаем цену со скидкой
     }
 
-
     public boolean getIsSpecial() {
         return true;
     }

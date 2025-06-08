@@ -13,7 +13,6 @@ public class SearchEngine extends Article {
         products = new ArrayList<>();
     }
 
-
     public void addProduct(Product product) {
         products.add(product);
     }

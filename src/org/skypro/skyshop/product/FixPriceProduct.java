@@ -17,7 +17,6 @@ public class FixPriceProduct extends Product {
         return true;
     }
 
-
     @Override
     public String toString() {
 

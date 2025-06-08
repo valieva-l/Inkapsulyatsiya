@@ -20,7 +20,6 @@ public class Product {
 
         return productName;
 
-
     }
 
     public int getProductСost() {
