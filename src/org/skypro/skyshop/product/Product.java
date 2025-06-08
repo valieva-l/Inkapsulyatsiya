@@ -40,7 +40,7 @@ public class Product implements Searchable {
 
     @Override
     public String getSearchTerm() {
-        return "";
+        return productName;
     }
 
     @Override
