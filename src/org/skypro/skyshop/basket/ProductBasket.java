@@ -13,7 +13,6 @@ public class ProductBasket {
             }
         }
 
-
         System.out.println("Невозможно добавить продукт");
     }
 

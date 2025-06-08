@@ -9,6 +9,7 @@ public class Product {
         this.productСost = productСost;
     }
 
+
     public Product(String productName) {
         if (productName == null || productName.isBlank()) {
             throw new IllegalArgumentException("Название продукта не может быть пустым или состоять только из пробелов.");

@@ -58,7 +58,6 @@ public class SearchEngine extends Article {
         if (bestMatch == null) {
             throw new BestResultNotFound("Не найдено подходящих результатов для запроса: " + search);
         }
-
         return bestMatch;
     }
 

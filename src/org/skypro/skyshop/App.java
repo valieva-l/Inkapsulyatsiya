@@ -15,6 +15,7 @@ public class App {
 
     public static void main(String[] args) {
 
+
         SearchEngine searchEngine = new SearchEngine(10);
 
         searchEngine.add(new Product("Помидор", 259));
