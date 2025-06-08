@@ -7,9 +7,12 @@ public class Product implements Searchable {
     private int productСost;
 
 
+
     public Product(String productName, int productСost) {
         this.productName = productName;
         this.productСost = productСost;
+
+
     }
 
     public Product(String productName) {
@@ -18,11 +21,15 @@ public class Product implements Searchable {
     public String getProductName() {
 
         return productName;
+
+
+
     }
 
 
     public int getProductСost() {
         return productСost;
+
     }
 
     @Override
