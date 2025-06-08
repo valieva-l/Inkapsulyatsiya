@@ -5,7 +5,6 @@ public class Article implements Searchable {
     private String articleTitle;
     private String articleText;
 
-
     public Article(String articleTitle, String articleText) {
         this.articleTitle = articleTitle;
         this.articleText = articleText;

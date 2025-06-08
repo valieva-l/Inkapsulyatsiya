@@ -7,7 +7,6 @@ public class Product implements Searchable {
     private int productСost;
 
 
-
     public Product(String productName, int productСost) {
         this.productName = productName;
         this.productСost = productСost;

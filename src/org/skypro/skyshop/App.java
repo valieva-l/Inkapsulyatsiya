@@ -14,7 +14,6 @@ public class App {
 
         SearchEngine searchEngine = new SearchEngine(10);
 
-
         searchEngine.add(new Product("Помидор", 259));
         searchEngine.add(new Product("Огурцы", 150));
         searchEngine.add(new Product("Макароны", 200));

@@ -20,7 +20,6 @@ public class SearchEngine {
         }
     }
 
-
     public Searchable[] search(String term) {
         Searchable[] results = new Searchable[5];
         int count = 0;
