@@ -33,6 +33,7 @@ public class App {
         searchEngine.add(article3);
 
 
+
         System.out.println("\nПоиск по слову 'Что калорийнее — хлеб или макароны?':");
         Searchable[] results1 = searchEngine.search("Макароны");
         printResults(results1);
