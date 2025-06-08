@@ -29,6 +29,7 @@ public class Product {
         return productName;
     }
 
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
