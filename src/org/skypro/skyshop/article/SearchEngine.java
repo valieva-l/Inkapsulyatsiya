@@ -20,7 +20,6 @@ public class SearchEngine {
         }
     }
 
-
     public Searchable[] search(String term) {
         Searchable[] results = new Searchable[5];
         int count = 0;
@@ -30,7 +29,7 @@ public class SearchEngine {
                 if (count < 5) {
                     results[count] = item;
                     count++;
-                } else  if (count >=5){
+                } else if (count >= 5) {
                     break;
                 }
             }

@@ -6,23 +6,16 @@ public class Product implements Searchable {
     private String productName;
     private int productСost;
 
-
-
     public Product(String productName, int productСost) {
         this.productName = productName;
         this.productСost = productСost;
-
-
     }
 
     public String getProductName() {
-
         return productName;
-
     }
 
     public int getProductСost() {
-
         return productСost;
     }
 
@@ -51,7 +44,4 @@ public class Product implements Searchable {
         return productName;
     }
 
-    public void print() {
-
-    }
 }

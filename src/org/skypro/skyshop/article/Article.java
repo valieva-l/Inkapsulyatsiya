@@ -14,22 +14,22 @@ public class Article implements Searchable {
         return articleTitle + " " + articleText;
     }
 
-        @Override
-        public String getContentType() {
-            return "Тип";
-        }
+    @Override
+    public String getContentType() {
+        return "Тип";
+    }
 
     @Override
     public String getSearchableName() {
         return "Имя";
     }
+
     @Override
     public String toString() {
-        return  "Название статьи='" + articleTitle + '\'' +
+        return "Название статьи='" + articleTitle + '\'' +
                 ", Текст статьи='" + articleText + '\'' +
                 '}';
     }
-
 
 
 }

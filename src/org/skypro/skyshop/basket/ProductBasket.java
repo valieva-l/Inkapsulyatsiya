@@ -5,7 +5,6 @@ import org.skypro.skyshop.product.Product;
 public class ProductBasket {
     private final Product[] products = new Product[5];
 
-    // Метод добавления продукта
     public void addProduct(Product product) {
         for (int i = 0; i < products.length; i++) {
             if (products[i] == null) {
@@ -13,11 +12,9 @@ public class ProductBasket {
                 return;
             }
         }
-
         System.out.println("Невозможно добавить продукт");
     }
 
-    // Метод получения общей стоимости
     public int getTotalCost() {
         int total = 0;
         for (Product p : products) {
@@ -28,7 +25,6 @@ public class ProductBasket {
         return total;
     }
 
-    // Метод печати содержимого
     public void printContents() {
         boolean empty = true;
         for (Product p : products) {
@@ -44,7 +40,6 @@ public class ProductBasket {
         }
     }
 
-    //метод поиска товара
     public boolean containsProduct(Product product) {
         for (Product p : products) {
             if (p != null && p.equals(product)) {
