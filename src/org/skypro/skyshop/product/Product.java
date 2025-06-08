@@ -13,6 +13,11 @@ public class Product implements Searchable {
 
     }
 
+    public Product(String productName) {
+        if (productName == null || productName.isBlank()) {
+            throw new IllegalArgumentException("Название продукта не может быть пустым или состоять только из пробелов.");
+        }
+    }
 
     public String getProductName() {
 
