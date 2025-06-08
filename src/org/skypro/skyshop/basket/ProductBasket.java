@@ -2,20 +2,21 @@ package org.skypro.skyshop.basket;
 
 import org.skypro.skyshop.product.Product;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class ProductBasket {
-    private final Product[] products = new Product[5];
+    private List<Product> products;
 
-    public void addProduct(Product product) {
-        for (int i = 0; i < products.length; i++) {
-            if (products[i] == null) {
-                products[i] = product;
-                return;
-            }
-        }
-
-        System.out.println("Невозможно добавить продукт");
+    public ProductBasket() {
+        products = new ArrayList<>();
     }
 
+
+    public void addProduct(Product product) {
+        products.add(product);
+    }
 
     public int getTotalCost() {
         int total = 0;
@@ -26,7 +27,6 @@ public class ProductBasket {
         }
         return total;
     }
-
 
     public void printContents() {
         boolean empty = true;
@@ -43,7 +43,6 @@ public class ProductBasket {
         }
     }
 
-
     public boolean containsProduct(Product product) {
         for (Product p : products) {
             if (p != null && p.equals(product)) {
@@ -53,13 +52,28 @@ public class ProductBasket {
         return false;
     }
 
+    public List<Product> removeProductsByName(String name) {
+        List<Product> removedProducts = new ArrayList<>();
+        Iterator<Product> iterator = products.iterator();
+
+        while (iterator.hasNext()) {
+            Product product = iterator.next();
+            if (product.getName().equals(name)) {
+                removedProducts.add(product);
+                iterator.remove();
+            }
+        }
+        return removedProducts;
+    }
 
     public void clear() {
-        for (int i = 0; i < products.length; i++) {
-            products[i] = null;
-        }
-
+        products.clear();
         System.out.println("Корзина очищена");
     }
 
+    public void printBasket() {
+        for (Product product : products) {
+            System.out.println(product);
+        }
+    }
 }

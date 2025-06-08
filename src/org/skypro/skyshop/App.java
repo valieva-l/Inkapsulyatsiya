@@ -1,87 +1,36 @@
 package org.skypro.skyshop;
 
-import org.skypro.skyshop.article.Article;
 import org.skypro.skyshop.article.SearchEngine;
-import org.skypro.skyshop.article.Searchable;
 import org.skypro.skyshop.basket.ProductBasket;
-import org.skypro.skyshop.article.BestResultNotFound;
-import org.skypro.skyshop.product.DiscountedProduct;
 import org.skypro.skyshop.product.Product;
-import org.skypro.skyshop.product.SimpleProduct;
-
+import java.util.List;
 
 public class App {
-    private static SearchEngine searchEngine;
 
     public static void main(String[] args) {
 
+        SearchEngine searchEngine = new SearchEngine();
+        ProductBasket basket = new ProductBasket();
 
-        SearchEngine searchEngine = new SearchEngine(10);
+        basket.addProduct(new Product("Помидор", 259));
+        basket.addProduct(new Product("Огурцы", 150));
+        searchEngine.addProduct(new Product("Макароны", 200));
+        searchEngine.addProduct(new Product("Сыр", 239));
+        basket.addProduct(new Product("Молоко", 96));
+        basket.addProduct(new Product("Хлеб", 54));
 
-        searchEngine.add(new Product("Помидор", 259));
-        searchEngine.add(new Product("Огурцы", 150));
-        searchEngine.add(new Product("Макароны", 200));
-        searchEngine.add(new Product("Сыр", 239));
-        searchEngine.add(new Product("Молоко", 96));
-        searchEngine.add(new Product("Хлеб", 54));
+        List<Product> removedProducts = basket.removeProductsByName("Помидор");
+        System.out.println("Удаленные продукты: " + removedProducts);
 
-        Article article1 = new Article("Здоровое питание", "Польза употреблении овощей");
-        Article article2 = new Article("Рецепты с молочной продукцией", "Вкусные рецепты с использованием молочной продукции");
-        Article article3 = new Article("Что калорийнее — хлеб или макароны?", "Практические советы и рецепты для более здорового выбора углеводов");
+        basket.printBasket();
 
-        searchEngine.add(article1);
-        searchEngine.add(article2);
-        searchEngine.add(article3);
-
-        System.out.println("\nПоиск по слову 'Что калорийнее — хлеб или макароны?':");
-        Searchable[] results1 = searchEngine.search("Макароны");
-        printResults(results1);
-
-        System.out.println("\nПоиск по слову 'Здоровое питание':");
-        Searchable[] results2 = searchEngine.search("Помидор");
-        printResults(results2);
-
-        System.out.println("\nПоиск по слову 'Яблоко':");
-        Searchable[] results3 = searchEngine.search("Яблоко");
-        printResults(results3);
-
-        try {
-            SimpleProduct product1 = new SimpleProduct("", 10);
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+        removedProducts = basket.removeProductsByName("Макароны");
+        if (removedProducts.isEmpty()) {
+            System.out.println("Список пуст");
         }
+        basket.printBasket();
 
-        try {
-            SimpleProduct product2 = new SimpleProduct("Макароны", -10);
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            DiscountedProduct product3 = new DiscountedProduct("Помидор", 20, 150);
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            Searchable bestMatch = searchEngine.findBestMatch("Огурцы");
-            System.out.println("Лучший результат: " + bestMatch.getSearchTerm());
-        } catch (BestResultNotFound e) {
-            System.out.println(e.getMessage());
-        }
-
-    }
-
-    private static void printResults(Searchable[] results) {
-        if (results.length == 0) {
-            System.out.println("Ничего не найдено.");
-        } else {
-            for (Searchable item : results) {
-                if (item != null) {
-                    System.out.println(item.getSearchTerm());
-                }
-
-            }
-        }
+        List<Product> results = searchEngine.search("Яблоко");
+        System.out.println("Результаты поиска: " + results);
     }
 }
