@@ -1,17 +1,18 @@
 package org.skypro.skyshop;
 
 import org.skypro.skyshop.article.Article;
-import org.skypro.skyshop.article.BestResultNotFound;
 import org.skypro.skyshop.article.SearchEngine;
 import org.skypro.skyshop.article.Searchable;
-
+import org.skypro.skyshop.basket.ProductBasket;
+import org.skypro.skyshop.article.BestResultNotFound;
 import org.skypro.skyshop.product.DiscountedProduct;
 import org.skypro.skyshop.product.Product;
 import org.skypro.skyshop.product.SimpleProduct;
 
-public class App {
 
+public class App {
     private static SearchEngine searchEngine;
+
     public static void main(String[] args) {
 
         SearchEngine searchEngine = new SearchEngine(10);
@@ -30,6 +31,18 @@ public class App {
         searchEngine.add(article1);
         searchEngine.add(article2);
         searchEngine.add(article3);
+
+        System.out.println("\nПоиск по слову 'Что калорийнее — хлеб или макароны?':");
+        Searchable[] results1 = searchEngine.search("Макароны");
+        printResults(results1);
+
+        System.out.println("\nПоиск по слову 'Здоровое питание':");
+        Searchable[] results2 = searchEngine.search("Помидор");
+        printResults(results2);
+
+        System.out.println("\nПоиск по слову 'Яблоко':");
+        Searchable[] results3 = searchEngine.search("Яблоко");
+        printResults(results3);
 
         try {
             SimpleProduct product1 = new SimpleProduct("", 10);
@@ -56,18 +69,6 @@ public class App {
             System.out.println(e.getMessage());
         }
 
-        System.out.println("\nПоиск по слову 'Что калорийнее — хлеб или макароны?':");
-        Searchable[] results1 = searchEngine.search("Хлеб");
-        printResults(results1);
-
-
-        System.out.println("\nПоиск по слову 'Здоровое питание':");
-        Searchable[] results2 = searchEngine.search("Помидор");
-        printResults(results2);
-
-        System.out.println("\nПоиск по слову 'Яблоко':");
-        Searchable[] results3 = searchEngine.search("Яблоко");
-        printResults(results3);
     }
 
     private static void printResults(Searchable[] results) {
@@ -83,7 +84,3 @@ public class App {
         }
     }
 }
-
-
-
-
