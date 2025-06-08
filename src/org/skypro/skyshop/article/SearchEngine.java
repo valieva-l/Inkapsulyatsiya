@@ -45,7 +45,6 @@ public class SearchEngine extends Article {
         return java.util.Arrays.copyOf(results, count);
     }
 
-
     public Searchable findBestMatch(String search) throws BestResultNotFound {
         Searchable bestMatch = null;
         int maxCount = 0;

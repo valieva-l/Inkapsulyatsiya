@@ -13,7 +13,6 @@ public class Article implements Searchable {
     public Article() {
     }
 
-
     public String getSearchTerm() {
         return articleTitle + " " + articleText;
     }
@@ -33,7 +32,5 @@ public class Article implements Searchable {
                 ", Текст статьи='" + articleText + '\'' +
                 '}';
     }
-
-
 
 }

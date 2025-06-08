@@ -10,7 +10,6 @@ import org.skypro.skyshop.product.Product;
 import org.skypro.skyshop.product.SimpleProduct;
 
 public class App {
-
     public static void main(String[] args) {
 
         SearchEngine searchEngine = new SearchEngine(10);

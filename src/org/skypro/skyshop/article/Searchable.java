@@ -1,7 +1,5 @@
 package org.skypro.skyshop.article;
 
-import java.util.List;
-
 public interface Searchable {
 
     String getSearchTerm();

@@ -23,5 +23,4 @@ public class FixPriceProduct extends Product {
         return getProductName() + " Фиксированная цена " + FIX_PRODUCT;
     }
 
-
 }
