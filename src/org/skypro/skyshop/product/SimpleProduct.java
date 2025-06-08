@@ -4,8 +4,8 @@ public class SimpleProduct extends Product {
 
     private int productСost;
     public SimpleProduct(String productName, int productСost) {
-        super(productName, productСost );
-
+        super(productName);
+        this.productСost = productСost;
     }
 
     @Override
