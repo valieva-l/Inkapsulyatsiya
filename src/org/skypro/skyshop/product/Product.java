@@ -15,8 +15,6 @@ public class Product implements Searchable {
 
     }
 
-    public Product(String productName) {
-    }
 
     public String getProductName() {
 
