@@ -25,7 +25,6 @@ public class SearchEngine extends Article {
             }
         }
         return results;
-
     }
 
 }

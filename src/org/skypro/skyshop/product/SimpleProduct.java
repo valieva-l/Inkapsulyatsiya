@@ -15,6 +15,5 @@ public class SimpleProduct extends Product {
     @Override
     public int getProductСost() {
         return productСost;
-
     }
 }

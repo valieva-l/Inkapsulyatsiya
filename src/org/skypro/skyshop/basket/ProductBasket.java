@@ -66,7 +66,6 @@ public class ProductBasket {
         return removedProducts;
     }
 
-
     public void clear() {
         products.clear();
         System.out.println("Корзина очищена");

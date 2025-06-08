@@ -32,6 +32,5 @@ public class App {
 
         List<Product> results = searchEngine.search("Яблоко");
         System.out.println("Результаты поиска: " + results);
-
     }
 }

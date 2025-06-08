@@ -16,14 +16,14 @@ public class DiscountedProduct extends Product {
     @Override
     public int getProductСost() {
         int discountAmount = (basePrice * discountPercentage) / 100; // Считаем сумму скидки
-        return basePrice - discountAmount; // Возвращаем цену со скидкой
+        return basePrice - discountAmount;
     }
 
     public boolean getIsSpecial() {
         return true;
     }
 
-    // Переопределение toString
+
     @Override
     public String toString() {
         return "Товар со скидкой: Базовая цена: " + basePrice + ", Скидка: " + discountPercentage + "%, Итоговая цена: " + getProductСost();
