@@ -9,7 +9,6 @@ public class SimpleProduct extends Product {
         this.productСost = productСost;
     }
 
-
     @Override
     public int getProductСost() {
         return productСost;

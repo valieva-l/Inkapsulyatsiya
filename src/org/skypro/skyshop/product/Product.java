@@ -23,7 +23,6 @@ public class Product implements Searchable {
 
     public int getProductСost() {
         return productСost;
-
     }
 
     @Override
