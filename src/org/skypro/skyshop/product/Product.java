@@ -3,7 +3,7 @@ package org.skypro.skyshop.product;
 import org.skypro.skyshop.article.Searchable;
 
 public class Product implements Searchable {
-    public String productName;
+    private String productName;
     private int productСost;
 
 
