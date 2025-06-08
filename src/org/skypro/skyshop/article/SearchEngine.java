@@ -35,7 +35,6 @@ public class SearchEngine {
                 }
             }
         }
-
         return java.util.Arrays.copyOf(results, count);
     }
 }
