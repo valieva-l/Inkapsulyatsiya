@@ -23,10 +23,6 @@ public class SearchEngine extends Article {
         }
     }
 
-    public void add(Product productName) {
-    }
-
-
     public Searchable[] search(String term) {
         Searchable[] results = new Searchable[5];
         int count = 0;
@@ -76,8 +72,7 @@ public class SearchEngine extends Article {
         return count;
     }
 
+    public void add(Product productName) {
+    }
+
 }
-
-
-
-
