@@ -10,9 +10,8 @@ public class ProductBasket {
     private List<Product> products;
 
     public ProductBasket() {
-        products = new ArrayList<>(); // Используем ArrayList
+        products = new ArrayList<>();
     }
-
 
 
     public void addProduct(Product product) {
