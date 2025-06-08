@@ -54,7 +54,7 @@ public class ProductBasket {
         return false;
     }
 
-    // Очистка корзины
+
     public void clear() {
         for (int i = 0; i < products.length; i++) {
             products[i] = null;
