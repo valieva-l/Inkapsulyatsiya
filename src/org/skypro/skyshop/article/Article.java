@@ -15,10 +15,10 @@ public class Article implements Searchable {
         return articleTitle + " " + articleText;
     }
 
-        @Override
-        public String getContentType() {
-            return "Тип";
-        }
+    @Override
+    public String getContentType() {
+        return "Тип";
+    }
 
     @Override
     public String getSearchableName() {
@@ -30,7 +30,7 @@ public class Article implements Searchable {
                 ", Текст статьи='" + articleText + '\'' +
                 '}';
     }
-
-
+    public Article() {
+    }
 
 }

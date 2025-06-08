@@ -6,12 +6,18 @@ public class Product implements Searchable {
     private String productName;
     private int productСost;
 
-
     public Product(String productName, int productСost) {
         this.productName = productName;
         this.productСost = productСost;
 
     }
+
+    public Product(String productName) {
+        if (productName == null || productName.isBlank()) {
+            throw new IllegalArgumentException("Название продукта не может быть пустым или состоять только из пробелов.");
+        }
+    }
+
 
     public Product(String productName) {
         if (productName == null || productName.isBlank()) {
@@ -27,6 +33,10 @@ public class Product implements Searchable {
 
     public int getProductСost() {
         return productСost;
+    }
+
+    public String getSearchTerm() {
+        return productName;
     }
 
     @Override

@@ -1,6 +1,10 @@
 package org.skypro.skyshop.article;
 
-public class SearchEngine {
+import org.skypro.skyshop.product.Product;
+
+import java.util.List;
+
+public class SearchEngine extends Article {
 
     private Searchable[] searchableItems;
     private int currentIndex;
@@ -9,7 +13,6 @@ public class SearchEngine {
         searchableItems = new Searchable[size];
         currentIndex = 0;
     }
-
 
     public void add(Searchable item) {
         if (currentIndex < searchableItems.length) {
@@ -29,14 +32,45 @@ public class SearchEngine {
                 if (count < 5) {
                     results[count] = item;
                     count++;
-                } else  if (count >=5){
+                } else if (count >= 5) {
                     break;
                 }
             }
         }
         return java.util.Arrays.copyOf(results, count);
     }
+
+    public Searchable findBestMatch(String search) throws BestResultNotFound {
+        Searchable bestMatch = null;
+        int maxCount = 0;
+
+        for (Searchable item : searchableItems) {
+            if (item != null) { // Проверка на null
+                int count = item.getSearchTerm().split(search, -1).length - 1;
+                if (count > maxCount) {
+                    maxCount = count;
+                    bestMatch = item;
+                }
+            }
+        }
+
+        if (bestMatch == null) {
+            throw new BestResultNotFound("Не найдено подходящих результатов для запроса: " + search);
+        }
+        return bestMatch;
+    }
+
+    private int countOccurrences(String str, String search) {
+        int count = 0;
+        int index = 0;
+        while ((index = str.indexOf(search, index)) != -1) {
+            count++;
+            index += search.length();
+        }
+        return count;
+    }
+
+    public void add(Product productName) {
+    }
+
 }
-
-
-
