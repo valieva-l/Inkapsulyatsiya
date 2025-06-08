@@ -10,6 +10,8 @@ import org.skypro.skyshop.product.Product;
 import org.skypro.skyshop.product.SimpleProduct;
 
 public class App {
+
+    private static SearchEngine searchEngine;
     public static void main(String[] args) {
 
         SearchEngine searchEngine = new SearchEngine(10);
@@ -57,6 +59,7 @@ public class App {
         System.out.println("\nПоиск по слову 'Что калорийнее — хлеб или макароны?':");
         Searchable[] results1 = searchEngine.search("Хлеб");
         printResults(results1);
+
 
         System.out.println("\nПоиск по слову 'Здоровое питание':");
         Searchable[] results2 = searchEngine.search("Помидор");

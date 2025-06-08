@@ -9,7 +9,7 @@ public interface Searchable {
     String getSearchableName();
 
     default String getStringRepresentation() {
-        return "имя" + getSearchableName() + " — тип " + getContentType();
+        return "имя" +  getSearchableName() + " — тип " + getContentType();
 
 
     }
