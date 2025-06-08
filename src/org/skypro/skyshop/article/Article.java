@@ -9,6 +9,12 @@ public class Article implements Searchable {
         this.articleTitle = articleTitle;
         this.articleText = articleText;
     }
+
+    public Article() {
+    }
+
+
+
     public String getSearchTerm() {
         return articleTitle + " " + articleText;
     }
