@@ -8,7 +8,6 @@ import org.skypro.skyshop.basket.ProductBasket;
 import org.skypro.skyshop.product.Product;
 
 public class App {
-
     private static SearchEngine searchEngine;
 
     public static void main(String[] args) {
