@@ -29,21 +29,8 @@ public class SearchEngine extends Article {
         return results;
     }
 
-    public List<Product> removeProductsByName(String name) {
-        List<Product> removedProducts = new ArrayList<>();
-
-        for (Map.Entry<String, List<Product>> entry : products.entrySet()) {
-            Iterator<Product> iterator = entry.getValue().iterator();
-
-            while (iterator.hasNext()) {
-                Product product = iterator.next();
-                if (product.getName().equals(name)) {
-                    removedProducts.add(product);
-                    iterator.remove();
-                }
-            }
-        }
-        return removedProducts;
+    public List<Product> removeByName(String name) {
+        return products.remove(name);
     }
 
     public void printAllProducts() {
