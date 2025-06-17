@@ -46,7 +46,6 @@ public class SearchEngine extends Article {
         return removedProducts;
     }
 
-
     public void printAllProducts() {
         for (List<Product> productList : products.values()) {
             for (Product product : productList) {
