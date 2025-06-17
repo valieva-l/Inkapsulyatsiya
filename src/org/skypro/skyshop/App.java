@@ -36,6 +36,5 @@ public class App {
             System.out.println("Список пуст");
         }
         basket.printBasket();
-
     }
 }
