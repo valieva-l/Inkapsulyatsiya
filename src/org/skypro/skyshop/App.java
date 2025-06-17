@@ -26,19 +26,16 @@ public class App {
             System.out.println("Product Name: " + entry.getKey() + ", Product Details: " + entry.getValue());
         }
 
+        List<Product> removedProducts = basket.removeProductsByName("Помидор");
+        System.out.println("Удаленные продукты: " + removedProducts);
 
-//        List<Product> removedProducts = basket.removeProductsByName("Помидор");
-//        System.out.println("Удаленные продукты: " + removedProducts);
-//
-//        basket.printBasket();
-//
-//        removedProducts = basket.removeProductsByName("Макароны");
-//        if (removedProducts.isEmpty()) {
-//            System.out.println("Список пуст");
-//        }
-//        basket.printBasket();
+        basket.printBasket();
 
-        //List<Product> results = searchEngine.search("Яблоко");
-       // System.out.println("Результаты поиска: " + results);
+        removedProducts = basket.removeProductsByName("Макароны");
+        if (removedProducts.isEmpty()) {
+            System.out.println("Список пуст");
+        }
+        basket.printBasket();
+
     }
 }
