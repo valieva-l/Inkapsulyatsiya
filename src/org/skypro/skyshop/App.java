@@ -1,9 +1,11 @@
 package org.skypro.skyshop;
 
 import org.skypro.skyshop.article.SearchEngine;
+import org.skypro.skyshop.article.Searchable;
 import org.skypro.skyshop.basket.ProductBasket;
 import org.skypro.skyshop.product.Product;
 import java.util.List;
+import java.util.Map;
 
 public class App {
 
@@ -19,6 +21,11 @@ public class App {
         basket.addProduct(new Product("Молоко", 96));
         basket.addProduct(new Product("Хлеб", 54));
 
+        Map<String, Searchable> searchResults = searchEngine.search("Макароны");
+        for (Map.Entry<String, Searchable> entry : searchResults.entrySet()) {
+            System.out.println("Product Name: " + entry.getKey() + ", Product Details: " + entry.getValue());
+        }
+
         List<Product> removedProducts = basket.removeProductsByName("Помидор");
         System.out.println("Удаленные продукты: " + removedProducts);
 
@@ -29,8 +36,5 @@ public class App {
             System.out.println("Список пуст");
         }
         basket.printBasket();
-
-        List<Product> results = searchEngine.search("Яблоко");
-        System.out.println("Результаты поиска: " + results);
     }
 }

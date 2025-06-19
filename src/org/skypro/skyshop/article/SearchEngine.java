@@ -1,30 +1,44 @@
 package org.skypro.skyshop.article;
 
 import org.skypro.skyshop.product.Product;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
 
 public class SearchEngine extends Article {
 
-    private List<Product> products;
-
+    private Map<String, List<Product>> products;
 
     public SearchEngine() {
-        products = new ArrayList<>();
+        products = new HashMap<>();
     }
 
     public void addProduct(Product product) {
-        products.add(product);
+        String name = product.getName();
+        products.putIfAbsent(name, new ArrayList<>());
+        products.get(name).add(product);
     }
 
-    public List<Product> search(String query) {
-        List<Product> results = new ArrayList<>();
-        for (Product product : products) {
-            if (product.getName().contains(query)) {
-                results.add(product);
+    public Map<String, Searchable> search(String query) {
+        Map<String, Searchable> results = new TreeMap<>();
+
+        if (products.containsKey(query)) {
+            for (Product product : products.get(query)) {
+                results.put(product.getName(), product);
             }
         }
         return results;
     }
 
+    public List<Product> removeByName(String name) {
+        return products.remove(name);
+    }
+
+    public void printAllProducts() {
+        for (List<Product> productList : products.values()) {
+            for (Product product : productList) {
+                System.out.println(product);
+
+            }
+        }
+    }
 }
